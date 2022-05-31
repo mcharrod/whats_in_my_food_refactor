@@ -2,8 +2,9 @@ class FoodsService
   def self.get_foods
     list = "/fdc/v1/foods/search"
     response = conn.get(list) do |faraday|
-      faraday.params['api_key'] = ENV[:api_key]
+      faraday.params['api_key'] = ENV['api_key']
     end
+    JSON.parse(response.body, symbolize_names: true)
   end
 
   def self.conn
