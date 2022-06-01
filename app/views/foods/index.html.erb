@@ -1,1 +1,8 @@
-food info goes here
+<h1><%= @results_count %> SEARCH RESULTS FOUND</h1>
+
+<% @foods.each do |food| %>
+  <p>Brand: <%= food.brand %></p>
+  <p>description: <%= food.description %></p>
+  <p>ingredients:<%= food.ingredients %></p>
+  <p>upc: <%= food.upc %></p>
+<% end %>
